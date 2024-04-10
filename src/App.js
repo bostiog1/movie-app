@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import axios from 'axios';
 import MovieCard from "./MovieCard";
 import SearchIcon from "./search.svg";
 import "./App.css";
@@ -17,10 +17,12 @@ const App = () => {
   }, []);
 
   const searchMovies = async (title) => {
-    const response = await fetch(`${API_URL}&s=${title}`);
-    const data = await response.json();
-
-    setMovies(data.Search);
+    try {
+      const response = await axios.get(`${API_URL}&s=${title}`);
+      setMovies(response.data.Search);
+    } catch (error) {
+      console.error("There was a problem fetching the data:", error);
+    }
   };
 
   return (
