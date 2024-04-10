@@ -4,7 +4,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-console.log("asds");
+// console.log("asds");
 root.render(
   <React.StrictMode>
     <App />

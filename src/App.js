@@ -3,11 +3,12 @@ import React, { useState, useEffect } from "react";
 import MovieCard from "./MovieCard";
 import SearchIcon from "./search.svg";
 import "./App.css";
+import { setSelectionRange } from "@testing-library/user-event/dist/utils";
 
 const API_URL = "http://www.omdbapi.com?apikey=b6003d8a";
 
 const App = () => {
-console.log('asd')
+  // console.log("asd");
   const [searchTerm, setSearchTerm] = useState("");
   const [movies, setMovies] = useState([]);
 
@@ -24,7 +25,7 @@ console.log('asd')
 
   return (
     <div className="app">
-      <h1>MovieLand</h1>
+      <h1>Movie-App</h1>
 
       <div className="search">
         <input
@@ -41,8 +42,8 @@ console.log('asd')
 
       {movies?.length > 0 ? (
         <div className="container">
-          {movies.map((movie) => (
-            <MovieCard movie={movie} />
+          {movies.map((movie, index) => (
+            <MovieCard movie={movie} key={index} />
           ))}
         </div>
       ) : (
