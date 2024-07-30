@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import Interview from "./Interview";
+import InterviewChatGPT from "./InterviewChatGPT";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 // console.log("asds");
