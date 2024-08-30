@@ -3,9 +3,8 @@ import axios from 'axios';
 import MovieCard from "./MovieCard";
 import SearchIcon from "./search.svg";
 import "./App.css";
-import { setSelectionRange } from "@testing-library/user-event/dist/utils";
 
-const API_URL = "http://www.omdbapi.com?apikey=b6003d8a";
+const API_URL = process.env.REACT_APP_API_URL;
 
 const App = () => {
   // console.log("asd");
